@@ -16,18 +16,31 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "mlx.h"
+# include <math.h>
+# include <stdlib.h>
+# include "../libft/includes/libft.h"
 
 # define WIN_WIDTH      1280
 # define WIN_HEIGHT     960
 # define MAP_WIDTH      24
 # define MAP_HEIGHT     24
 
-typedef struct s_coord
+# define COL_RED        0x87CEEB
+# define COL_GREEN      0xFF7F50
+# define COL_BLUE       0x7CFC00
+# define COL_YELLOW     0xFFFF00
+# define COL_WHITE      0xFF4500
+
+# define KEY_ESC        53
+# define ARROW_LEFT     123
+# define ARROW_RIGHT    124
+# define ARROW_DOWN     125
+# define ARROW_UP       126
+
+typedef struct  s_coord
 {
     double x;
     double y;
-    int    blk_x;
-    int    blk_y;
 }               t_coord;
 
 typedef struct s_mlx
@@ -44,15 +57,40 @@ typedef struct s_mlx
 typedef struct s_player
 {
     t_coord     pos;
-    t_coord     dir;
+    t_coord     posdir;
     t_coord     plane;
+    t_coord     raydir;
 }              t_player;
 
 typedef struct  s_map
 {
     int width;
     int height;
-    int world_map[][];
+    int x;
+    int y;
 }               t_map;
+
+typedef struct s_move
+{
+    int     forwd;
+    int     backwd;
+    int     left;
+    int     right;
+}               t_move;
+
+
+typedef struct  s_combi
+{
+    t_mlx       *mlx;
+    t_player    *player;
+    t_map       map;
+    t_move      move;
+}               t_combi;
+
+void	draw_strip(int x, int drawStart, int drawEnd, int color, t_mlx *mlx);
+int     key_press(int key, t_combi *combi);
+int     key_release(int key, t_combi *combi);
+int     movement(t_combi *combi);
+void    draw_map(t_combi *combi);
 
 #endif
