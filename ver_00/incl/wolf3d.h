@@ -22,8 +22,12 @@
 
 # define WIN_WIDTH      1280
 # define WIN_HEIGHT     960
+# define TEX_WIDTH      640
+# define TEX_HEIGHT     640
 # define MAP_WIDTH      24
 # define MAP_HEIGHT     24
+
+# define NUM_TEXTURE    5
 
 # define COL_RED        0x87CEEB
 # define COL_GREEN      0xFF7F50
@@ -36,6 +40,8 @@
 # define ARROW_RIGHT    124
 # define ARROW_DOWN     125
 # define ARROW_UP       126
+
+extern int worldMap[MAP_HEIGHT][MAP_WIDTH];
 
 typedef struct  s_coord
 {
@@ -53,6 +59,17 @@ typedef struct s_mlx
     int     size_line;
     int     endian;
 }               t_mlx;
+
+typedef struct  s_teximage
+{
+    void    *img_ptr;
+    void    *data_addr;
+    int     bits_per_piexl;
+    int     size_line;
+    int     endian;
+    int     width;
+    int     height;
+}               t_teximg;
 
 typedef struct s_player
 {
@@ -85,6 +102,7 @@ typedef struct  s_combi
     t_player    *player;
     t_map       map;
     t_move      move;
+    t_teximg   *teximg[NUM_TEXTURE];
 }               t_combi;
 
 void	draw_strip(int x, int drawStart, int drawEnd, int color, t_mlx *mlx);
@@ -92,5 +110,5 @@ int     key_press(int key, t_combi *combi);
 int     key_release(int key, t_combi *combi);
 int     movement(t_combi *combi);
 void    draw_map(t_combi *combi);
-
+void    load_texture(t_mlx *mlx, t_combi *combi);
 #endif

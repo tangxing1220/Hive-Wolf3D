@@ -20,7 +20,8 @@ OBJ_PATH = objs
 
 SOURCES = main.c \
 		draw.c \
-		keys.c
+		keys.c \
+		texture.c
 
 SRCS = $(addprefix $(SRC_PATH)/,$(SOURCES))
 OBJS = $(addprefix $(OBJ_PATH)/,$(SOURCES:.c=.o))
