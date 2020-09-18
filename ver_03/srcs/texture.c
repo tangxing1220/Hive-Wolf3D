@@ -23,16 +23,16 @@ void load_texture(t_mlx *mlx, t_combi *c)
                                     "textures/grass.xpm"};
 
     i = 0;
-    tex_w = TEX_WIDTH;
-    tex_h = TEX_HEIGHT;   
+ //   tex_w = TEX_WIDTH;
+ //   tex_h = TEX_HEIGHT;   
     while (i < NUM_TEXTURE)
     {
         teximg[i] = (t_teximg *)malloc(sizeof(t_teximg));
         teximg[i]->img_ptr = mlx_xpm_file_to_image(mlx->mlx_ptr, texname[i], &tex_w, &tex_h);
         teximg[i]->data_addr = mlx_get_data_addr(teximg[i]->img_ptr, &teximg[i]->bits_per_piexl, &teximg[i]->size_line,
                         &teximg[i]->endian);
-        teximg[i]->height = 640;
-        teximg[i]->width = 640;
+        teximg[i]->height = tex_h;
+        teximg[i]->width = tex_w;
         c->teximg[i]= teximg[i];
         i++;
     }

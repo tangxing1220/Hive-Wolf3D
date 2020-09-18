@@ -22,8 +22,8 @@
 
 # define WIN_WIDTH          1280
 # define WIN_HEIGHT         1280
-# define TEX_WIDTH          640
-# define TEX_HEIGHT         640
+# define TEX_WIDTH          1024
+# define TEX_HEIGHT         1024
 # define MAP_WIDTH          24
 # define MAP_HEIGHT         24
 
@@ -66,7 +66,7 @@ typedef struct s_mlx
 typedef struct  s_teximage
 {
     void    *img_ptr;
-    void    *data_addr;
+    char    *data_addr;
     int     bits_per_piexl;
     int     size_line;
     int     endian;
@@ -116,6 +116,6 @@ int     movement(t_combi *combi);
 void    draw_map(t_combi *combi);
 void    load_texture(t_mlx *mlx, t_combi *combi);
 int     **load_map(char *filename);
-void    draw_minimap(t_combi *c);
+// void    draw_minimap(t_combi *c);
 
 #endif

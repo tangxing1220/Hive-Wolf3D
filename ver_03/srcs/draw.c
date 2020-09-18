@@ -27,7 +27,7 @@ void	draw_strip(int x, int drawStart, int drawEnd, int color, t_mlx *mlx)
         y++;
 	}
 }
-
+/*
 void draw_square(t_mlx *mlx, int x, int y,  int size)
 {
 
@@ -53,3 +53,4 @@ void draw_minimap(t_combi *c)
         y++;
     }
 }
+*/

@@ -83,16 +83,18 @@ void calc_ray(t_combi *c, int x)
     int lineHeight;
     int drawStart;
     int drawEnd;
-//    int texNum;
-//    double wallX;
-//    int texX;
-//    int texY;
-//    double step;
-//   double texPos;
-//   int y;
-//    int tex_i;
-//    int piex_i;
-    int color;
+
+    int texNum;
+    double wallX;
+    int texX;
+    int texY;
+    double step;
+   double texPos;
+   int y;
+    int tex_i;
+    int piex_i;
+
+ //   int color;
 
     hit = 0;
     cameraX = 2 * x / (double)(WIN_WIDTH) - 1;
@@ -159,8 +161,8 @@ void calc_ray(t_combi *c, int x)
     drawEnd = (lineHeight / 2) + (WIN_HEIGHT / 2);
     if (drawEnd > WIN_HEIGHT)
         drawEnd = WIN_HEIGHT - 1;
-/*
-    texNum = worldMap[c->map.x][c->map.y] - 1;
+
+    texNum = c->worldMap[c->map.x][c->map.y] - 1;
 
     if(side == 0)
         wallX = c->player->pos.y + perWallDist * c->player->raydir.y;
@@ -176,7 +178,7 @@ void calc_ray(t_combi *c, int x)
 
     step = 1.0 * TEX_HEIGHT / lineHeight;
 
-    texPos = (drawStart - TEX_HEIGHT / 2 + lineHeight / 2) * step;
+    texPos = (drawStart - WIN_HEIGHT / 2 + lineHeight / 2) * step;
 
     y = drawStart; 
     while(y < drawEnd)
@@ -184,14 +186,15 @@ void calc_ray(t_combi *c, int x)
         texY = (int)texPos & (TEX_HEIGHT - 1);
         texPos += step;
         tex_i = TEX_HEIGHT * texY + texX;
+        tex_i = (texX * c->teximg[texNum]->bits_per_piexl / 8) + (texY * c->teximg[texNum]->size_line); 
         piex_i = (x * c->mlx->bits_per_piexl / 8) + (y * c->mlx->size_line);
- //       c->mlx->data_addr[piex_i] = c->teximg[texNum]->data_addr[tex_i];
- //       c->mlx->data_addr[++piex_i] = c->teximg[texNum]->data_addr[++tex_i];
- //       c->mlx->data_addr[++piex_i] = c->teximg[texNum]->data_addr[++tex_i];
+        c->mlx->data_addr[piex_i] = c->teximg[texNum]->data_addr[tex_i];
+        c->mlx->data_addr[++piex_i] = c->teximg[texNum]->data_addr[++tex_i];
+        c->mlx->data_addr[++piex_i] = c->teximg[texNum]->data_addr[++tex_i];
         y++;
     }
-*/
 
+/*
     if (c->worldMap[c->map.x][c->map.y] == 1)
         color = COL_RED;
     else if (c->worldMap[c->map.x][c->map.y] == 2)
@@ -210,7 +213,7 @@ void calc_ray(t_combi *c, int x)
         color = COL_WHITE;
 
     draw_strip(x, drawStart, drawEnd, color, c->mlx);
-
+*/
 }
 
 void draw_map(t_combi *combi)
@@ -245,7 +248,7 @@ int main(int argc, char **argv)
         mlx_hook(mlx->win_ptr, 3, 0, key_release, combi);
 
         draw_map(combi);
-        draw_minimap(combi);
+ //       draw_minimap(combi);
 	    mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img_ptr, 0, 0);
 	    mlx_loop_hook(mlx->mlx_ptr, movement, combi);
         mlx_loop(mlx->mlx_ptr);
