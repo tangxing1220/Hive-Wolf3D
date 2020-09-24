@@ -63,7 +63,7 @@ void	right_left_ward(t_combi *c)
 	t_coord	odir;
 	t_coord	oflt;
 
-	rosp = 0.04;
+	rosp = 0.20;
 	if (c->move.left == 1)
 	{
 		odir.x = c->ply->pdir.x;
@@ -96,7 +96,7 @@ void	for_back_ward(t_combi *c)
 {
 	double mvsp;
 
-	mvsp = 0.08;
+	mvsp = 0.06;
 	if (c->move.forwd == 1)
 	{
 		if (c->worldmap[(int)(c->ply->pos.x + c->ply->pdir.x * mvsp)]\

@@ -59,7 +59,7 @@ void	render_wall(t_combi *c)
 		calc_lineheight(c, tex);
 		calc_line_pos(tex);
 		render_texture(c, tex);
-		texnum = c->worldmap[c->map.x][c->map.y] - 1;
+		texnum = c->worldmap[c->map.x][c->map.y];
 		img.y = tex->drawstart;
 		while (img.y < tex->drawend)
 		{

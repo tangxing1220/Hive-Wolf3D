@@ -23,9 +23,10 @@ void	load_texture(t_mlx *mlx, t_combi *c)
 	int				tex_w;
 	int				tex_h;
 	t_teximg		*teximg[NUM_TEXTURE];
-	static char		*texname[NUM_TEXTURE] = {"textures/brick.xpm",\
-		"textures/wood.xpm", "textures/metal.xpm", "textures/stone.xpm",\
-		"textures/grass.xpm", "textures/ceiling.xpm", "textures/floor.xpm"};
+	static char		*texname[NUM_TEXTURE] = {"textures/floor.xpm",\
+		"textures/brick.xpm", "textures/wood.xpm", "textures/stone.xpm",\
+		"textures/grass.xpm", "textures/metal.xpm", "textures/w3d.xpm",\
+		"textures/ceiling.xpm"};
 
 	i = 0;
 	while (i < NUM_TEXTURE)

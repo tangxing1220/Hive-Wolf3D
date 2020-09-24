@@ -28,7 +28,8 @@ void	draw_square(t_mlx *mlx, t_vector vec, int color, int size)
 		i = size * 2 + size * vec.x;
 		while (i < size * 2 + size * (vec.x + 1))
 		{
-			index = (i * mlx->bpp / 8) + (j * mlx->sl);
+			index = (i * mlx->bpp / 8) +\
+							((j + W_HEIGHT - (size + 1) * MAP_H) * mlx->sl);
 			mlx->data_addr[index] = color;
 			mlx->data_addr[++index] = color >> 8;
 			mlx->data_addr[++index] = color >> 16;
@@ -39,7 +40,7 @@ void	draw_square(t_mlx *mlx, t_vector vec, int color, int size)
 }
 
 /*
-**	To draw a small map at the top left conner. It show the whole map and
+**	To draw a small map at the top left conner. It shows the whole map and
 **	current player position.
 */
 
@@ -49,7 +50,7 @@ void	draw_minimap(t_combi *c)
 	t_vector	pos_v;
 	int			size;
 
-	size = W_WIDTH / 10 / MAP_W;
+	size = W_WIDTH / 8 / MAP_W;
 	map_v.y = 0;
 	while (map_v.y < MAP_W)
 	{

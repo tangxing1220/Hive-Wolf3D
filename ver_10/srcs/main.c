@@ -35,8 +35,8 @@ t_player	*player_init(void)
 	t_player *ply;
 
 	ply = (t_player *)malloc(sizeof(t_player));
-	ply->pos.x = 19;
-	ply->pos.y = 18;
+	ply->pos.x = 5;
+	ply->pos.y = 4;
 	ply->pdir.x = 1;
 	ply->pdir.y = 0;
 	ply->flt.x = 0;

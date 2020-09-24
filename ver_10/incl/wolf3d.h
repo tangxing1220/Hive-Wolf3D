@@ -22,23 +22,24 @@
 
 # define W_WIDTH            1280
 # define W_HEIGHT           1280
-# define TEX_WIDTH          1024
+# define TEX_WIDTH         	1024
 # define TEX_HEIGHT         1024
 # define MAP_W              24
 # define MAP_H              24
 
-# define NUM_TEXTURE        7
+# define NUM_TEXTURE        8
 
 # define COL_MIN_MAP        0xFFFFFF
 # define COL_MIN_POS        0xFF4500
 
-# define T_0_BRICK        0
-# define T_1_WOOD         1
-# define T_2_METAL        2
-# define T_3_STONE        3
-# define T_4_GLASS        4
-# define T_5_CEILING      5
-# define T_6_FLOOR        6
+# define T_0_FLOOR			0
+# define T_1_BRICK        	1
+# define T_2_WOOD         	2
+# define T_3_STONE        	3
+# define T_4_GRASS        	4
+# define T_5_METAL        	5
+# define T_6_W3D	      	6
+# define T_7_CEILING      	7
 
 # define KEY_ESC            53
 # define ARROW_LEFT         123
