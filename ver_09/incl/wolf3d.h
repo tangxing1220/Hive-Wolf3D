@@ -123,7 +123,7 @@ typedef struct	s_tex
 	int		drawstart;
 	int		drawend;
 	int		side;
-	int		perwalldist;
+	double	perwalldist;
 	double	wallx;
 }				t_tex;
 

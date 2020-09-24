@@ -1,1 +1,0 @@
-gcc -Werror -Wextra -Wall -g main.c -I /Users/xtang/Rework/Wolf3d/ver_01/incl -L /Users/xtang/Rework/Wolf3d/ver_01/libft -lft

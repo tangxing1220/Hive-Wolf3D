@@ -29,8 +29,8 @@ SOURCES = main.c \
 SRCS = $(addprefix $(SRC_PATH)/,$(SOURCES))
 OBJS = $(addprefix $(OBJ_PATH)/,$(SOURCES:.c=.o))
 
-MLX = -I /usr/local/include -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit -lpthread
-
+#MLX = -I /usr/local/include -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit -lpthread
+MLX = -I /usr/local/include -L /Users/tiantian/hive/wolf3d/temp/ver_09/miniLibX -lmlx -framework OpenGL -framework AppKit -lpthread
 .PHONY: all libft tmp clean fclean re
 
 all: libft tmp $(NAME)
