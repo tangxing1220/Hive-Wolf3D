@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "__cxx_version": "cpp",
+        "__hash_table": "cpp",
+        "functional": "cpp",
+        "type_traits": "cpp",
+        "__split_buffer": "c",
+        "array": "c",
+        "bitset": "c",
+        "initializer_list": "c",
+        "iterator": "c",
+        "string": "c",
+        "string_view": "c",
+        "unordered_map": "c",
+        "utility": "c",
+        "vector": "c",
+        "cstdio": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "__locale": "c"
+    }
+}
