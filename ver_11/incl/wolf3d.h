@@ -40,7 +40,7 @@
 # define T_5_METAL        	5
 # define T_6_W3D	      	6
 # define T_7_CEILING      	7
-# define T_8_LIGHT			8
+# define T_8_SKY			8
 
 # define KEY_ESC            53
 # define ARROW_LEFT         123

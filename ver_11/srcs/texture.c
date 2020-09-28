@@ -26,7 +26,7 @@ void	load_texture(t_mlx *mlx, t_combi *c)
 	static char		*texname[NUM_TEXTURE] = {"textures/floor.xpm",\
 		"textures/brick.xpm", "textures/wood.xpm", "textures/stone.xpm",\
 		"textures/grass.xpm", "textures/metal.xpm", "textures/w3d.xpm",\
-		"textures/ceiling.xpm", "textures/lightning.xpm"};
+		"textures/ceiling.xpm", "textures/sky.xpm"};
 
 	i = 0;
 	while (i < NUM_TEXTURE)

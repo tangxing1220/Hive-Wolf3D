@@ -46,16 +46,16 @@ void	sky_draw(t_combi *c, int x, int y)
 
 	double	rate_x;
 	double  rate_y;
-	rate_x = (double)(W_WIDTH / c->teximg[T_8_LIGHT]->w);
-	rate_y = (double)(W_HEIGHT/ 2 / c->teximg[T_8_LIGHT]->h);
+	rate_x = (double)(W_WIDTH / c->teximg[T_8_SKY]->w);
+	rate_y = (double)(W_HEIGHT / c->teximg[T_8_SKY]->h);
 
 	tex_x = (int)(x * rate_x);
-	tex_y = (int)(y * rate_y);
-	tex_i = (tex_x * c->teximg[T_8_LIGHT]->bpp / 8) + tex_y * c->teximg[T_8_LIGHT]->sl;
+	tex_y = (int)((W_HEIGHT - y - 1) * rate_y);
+	tex_i = (tex_x * c->teximg[T_8_SKY]->bpp / 8) + tex_y * c->teximg[T_8_SKY]->sl;
 	pixel_i = (x * c->mlx->bpp / 8) + ((W_HEIGHT - y - 1) * c->mlx->sl);
-	c->mlx->data_addr[pixel_i] = c->teximg[T_8_LIGHT]->data_addr[tex_i];
-	c->mlx->data_addr[++pixel_i] = c->teximg[T_8_LIGHT]->data_addr[++tex_i];
-	c->mlx->data_addr[++pixel_i] = c->teximg[T_8_LIGHT]->data_addr[++tex_i];
+	c->mlx->data_addr[pixel_i] = c->teximg[T_8_SKY]->data_addr[tex_i];
+	c->mlx->data_addr[++pixel_i] = c->teximg[T_8_SKY]->data_addr[++tex_i];
+	c->mlx->data_addr[++pixel_i] = c->teximg[T_8_SKY]->data_addr[++tex_i];
 
 }
 
